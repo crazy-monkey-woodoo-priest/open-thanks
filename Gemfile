@@ -10,6 +10,7 @@ gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 
 gem 'haml-rails'
+gem 'simple_form'
 
 gem 'public_uid'
 
