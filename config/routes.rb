@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'pages#home'
-  resources :receivers
+  resources :r, controller: 'receivers', as: :receivers
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

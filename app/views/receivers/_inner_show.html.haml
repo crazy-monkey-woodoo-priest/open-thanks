@@ -1,4 +1,7 @@
 .row
   .col-sm-9
     %p= @receiver.description
+
+    %p
+      = link_to inline_svg('thanks-1.svg'), receiver_path(@receiver)
   .col-sm-3
