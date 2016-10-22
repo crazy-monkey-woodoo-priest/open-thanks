@@ -1,0 +1,19 @@
+.container
+  .page-header
+    %nav.btn-group.pull-right
+      = new_btn path: new_receiver_path
+    %h1
+      Thank you Receivers
+      %small Your Projects, Articles and other stuff you would like to receive <em>thanks</em> for
+
+  = flash_messages
+
+  .row
+    .col-sm-12
+      - @receivers.in_groups_of(3).each do |group|
+        .row
+          - group.each do |receiver|
+            .col-md-4
+              - if receiver
+                = render 'receivers/receiver', receiver: receiver
+

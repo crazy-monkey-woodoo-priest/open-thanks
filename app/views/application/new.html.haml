@@ -1,0 +1,9 @@
+.container
+  .page-header
+    %nav.btn-group.pull-right
+      = view_all_btn(path: polymorphic_path([resource.class]))
+
+    %h1 New #{resource.model_name}
+
+  = flash_messages
+  = render 'form'

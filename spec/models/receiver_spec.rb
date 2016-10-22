@@ -4,4 +4,5 @@ RSpec.describe Receiver, type: :model do
   subject { build :receiver }
 
   it_behaves_like 'should generate public_uid'
+  it_behaves_like 'param searchable resource'
 end

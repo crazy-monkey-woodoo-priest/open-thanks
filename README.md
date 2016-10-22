@@ -2,6 +2,11 @@
 
 
 
+## Code Approach
+
+Trying to follow [Ruby Style Guide](https://github.com/bbatsov/ruby-style-guide)
+with alteration around writing private methods to comply with
+[Scissors Rule](http://www.eq8.eu/blogs/16-scissors-rule-in-coding)
 
 ## Development
 

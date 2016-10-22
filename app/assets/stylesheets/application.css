@@ -13,3 +13,48 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  font-family: Montserrat, sans-serif;
+  line-height: 1.8;
+}
+
+p {font-size: 16px;}
+.jumbotron {
+  background-color: #1abc9c; /* Green */
+  color: #ffffff;
+}
+.jumbotron .container {
+  margin-top: 12%;
+  margin-bottom: 12%;
+}
+.navbar {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  letter-spacing: 5px;
+}
+.navbar-nav  li a:hover {
+  color: #1abc9c !important;
+}
+
+body .form-horizontal .form-group {
+  margin-left: 0px;
+}
+
+body .page-header {
+  margin-bottom: 20px
+}
+
+body .page-header small {
+  margin-top: 0.3em;
+  font-size: 0.3em;
+  display: block;
+}
+
+
+
+

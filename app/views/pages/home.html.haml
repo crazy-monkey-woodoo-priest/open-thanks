@@ -1,21 +1,24 @@
-.jumbotron
-  %h1 Open <strong>Thanks</strong>!
+%section.container-fluid.jumbotron
+  .container
+    %h1 Open <strong>Thanks</strong>!
+    %p Say thank you to your favorite Open Source project, article, or anything.
+    %p= link_to 'Get started', root_path, class: "btn btn-primary btn-lg", role: "button"
 
-  %p Say thank you to your favorite Open Source project, article, or anything.
+%section.container
+  %h1.hidden About
+  .row
+    .col-md-12
+    %p
+      It's really hard to say thank you these days without being accused of spamming.
 
-  %p= link_to 'Get started', root_path, class: "btn btn-primary btn-lg", role: "button"
+    %p
+      Let say you really like some Github project. How would you show your appreciation ?
 
-%p
-  It's really hard to say thank you these days without being occused of spamming.
+      %ul
+        %li Would you open a project "issue" saying "Thank you" ?
+        %li Would you create a Pull request saying "Thank you" ?
+        %li Would you google author until you find his email or twitter like a creepy stalker ?
+        %li Would you send the author a box of chocolates ?
 
-%p
-  Let say you really like some Github project. How would you show your appreciation ?
-
-  %ul
-    %li Would you open a project "issue" ?
-    %li Would you create a Pull request ?
-    %li Would you google author until you find his email or twitter like a creepy stalker ?
-
-%p
-  #{link_to 'Open thanks', root_path} is providing convenient way how to enable collecting of
-  "Thank you" on your project, article, blog.
+    %p
+      #{link_to 'Open thanks', root_path} provides convenient way how to receive and say "Thank you" on a project, article, blog, comment, ...

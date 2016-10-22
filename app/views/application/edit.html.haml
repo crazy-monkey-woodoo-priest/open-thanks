@@ -1,0 +1,10 @@
+.container
+  .page-header
+    %nav.btn-group.pull-right
+      = view_all_btn(path: polymorphic_path([resource.class]))
+      = show_btn(resource: resource)
+      = delete_btn(resource: resource)
+    %h1 Edit #{resource.model_name}
+
+  = flash_messages
+  = render 'form'

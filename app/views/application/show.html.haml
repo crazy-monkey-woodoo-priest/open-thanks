@@ -1,0 +1,11 @@
+.container
+  .page-header
+    %nav.btn-group.pull-right
+      = view_all_btn(path: polymorphic_path([resource.class]))
+      = edit_btn(resource: resource)
+      = delete_btn(resource: resource)
+
+    %h1= resource.title
+
+  = flash_messages
+  = render 'inner_show'
