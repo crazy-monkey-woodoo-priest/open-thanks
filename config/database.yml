@@ -12,4 +12,4 @@ development:
   database: <%= ENV['REL_DATABASE_DATABASE'] %>
 test:
   <<: *default
-  database: zdenka4_test
+  database: open_thanks_test
