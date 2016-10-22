@@ -1,0 +1,6 @@
+export REL_DATABASE_PASSWORD=xxxxxxxxxxxxxxx
+export REL_DATABASE_USERNAME=yyyyyy
+export REL_DATABASE_HOST=localhost
+export REL_DATABASE_DATABASE=open_thanks_development
+export MAX_THREADS=5
+
