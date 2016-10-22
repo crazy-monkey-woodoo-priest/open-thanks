@@ -11,6 +11,7 @@ gem 'sass-rails', '~> 5.0'
 
 gem 'haml-rails'
 gem 'simple_form'
+gem 'inline_svg'
 
 gem 'public_uid'
 

@@ -1,16 +1,65 @@
 !!!
-%html
+%html{:lang => "en"}
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title OpenThanks
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %title Open Thanks
     = csrf_meta_tags
-    = stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', media: 'all', rel: "stylesheet", 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css', media: 'all', rel: "stylesheet", 'data-turbolinks-track': 'reload'
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    %link{:href => "https://fonts.googleapis.com/css?family=Montserrat", :rel => "stylesheet"}/
+    :css
+      body {
+          font-family: Montserrat, sans-serif;
+          line-height: 1.8;
+      }
+
+      p {font-size: 16px;}
+      .jumbotron {
+          background-color: #1abc9c; /* Green */
+          color: #ffffff;
+      }
+      .jumbotron .container {
+          margin-top: 12%;
+          margin-bottom: 12%;
+      }
+      .navbar {
+          padding-top: 15px;
+          padding-bottom: 15px;
+          border: 0;
+          border-radius: 0;
+          margin-bottom: 0;
+          font-size: 12px;
+          letter-spacing: 5px;
+      }
+      .navbar-nav  li a:hover {
+          color: #1abc9c !important;
+      }
+
+
   %body
-    %article.container
-      .row
-        .col-md-12
-          = yield
+    %nav.navbar.navbar-default
+      .container
+        .navbar-header
+          %button.navbar-toggle{"data-target" => "#myNavbar", "data-toggle" => "collapse", :type => "button"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          = link_to 'Open Thanks', root_path, class: 'navbar-brand'
+        #myNavbar.collapse.navbar-collapse
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              %a{:href => "#"} WHO
+            %li
+              %a{:href => "#"} WHAT
+            %li
+              %a{:href => "#"} WHERE
+
+    = yield
+
+    = render 'layouts/footer'
 
     = javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'

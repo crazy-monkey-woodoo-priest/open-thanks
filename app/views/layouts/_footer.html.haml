@@ -1,0 +1,22 @@
+%footer.container-fluid
+  .container
+    .row
+      .col-sm-4
+        %h4 Source Links
+        %ul.list-unstyled
+          %li= link_to 'Application Github', t('footer.rr_github_link')
+
+        %h4 Ruby Rampage
+        %ul.list-unstyled
+          %li= link_to 'Rails Rumble Entry', t('footer.team_link')
+          %li= link_to 'Official Entry Heroku', t('footer.heroku_link')
+          %li= link_to 'Official Entry Github', t('footer.rr_github_link')
+
+      .col-sm-4
+        %i.fa.fa-diamond.ruby
+
+      .col-sm-4.text-right
+        %h4
+          %small.hidden Brought to you by:
+          = link_to t('footer.team_name'), t('footer.team_link')
+        = inline_svg('voodoo-monkey.svg', class: 'voodoo-monkey')
