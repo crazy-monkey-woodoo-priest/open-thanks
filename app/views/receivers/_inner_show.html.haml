@@ -3,37 +3,12 @@
     - if @receiver.description
       .well= @receiver.description
 
+    - @appreciations.each do |appreciation|
+      = render 'appreciations/appreciation', appreciation: appreciation
 
   .col-sm-3
-    .h4.text-center Enable on your project.
-
-    %div.text-center{style: "margin-top: 10px"}
-      .btn-group
-        = badge_colapse_btn(index: 1, suffix: 'md-1', text: 'Markdown')
-        = badge_colapse_btn(index: 1, suffix: 'html-1', text: 'HTML')
-        %button.btn.btn-success.btn-sm{"data-target" => "#myModal", "data-toggle" => "modal", :suffix => "button"}
-          More Badges
-          %i.fa.fa-angle-double-down
-    %div.text-center{style: "margin-bottom: 20px; margin-top: 10px;"}
-      = link_to image_tag(badge_image(1)), stable_url(@receiver)
-    %div.text-center
-      = badge_textarea_md(index: 1, suffix: 'md-1', receiver: @receiver)
-      = badge_textarea_html(index: 1, suffix: 'html-1', receiver: @receiver)
-
-    .text-center
-
-    / Modal
-    #myModal.modal.fade{"aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
-      .modal-dialog{:role => "document"}
-        .modal-content
-          .modal-header
-            %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :suffix => "button"}
-              %span{"aria-hidden" => "true"} ×
-            %h4#myModalLabel.modal-title Enable Open Thanks on your website.
-          .modal-body
-            - (1..4).each do |index|
-              .h4 Variant #{index}
-              = render 'variant', i: index, receiver: @receiver
-          .modal-footer
-            %button.btn.btn-default{"data-dismiss" => "modal", :suffix => "button"} Close
+    - if false
+      = render 'badges'
+    - else
+      = render 'appreciations/form'
 

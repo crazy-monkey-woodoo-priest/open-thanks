@@ -1,4 +1,5 @@
 class ReceiversController < ApplicationController
+  include ReceiversConcern
   before_action :set_receiver, only: [:edit, :update, :show, :destroy]
 
   def index
@@ -6,6 +7,8 @@ class ReceiversController < ApplicationController
   end
 
   def show
+    @appreciation = @receiver.appreciations.new
+    @appreciations = @receiver.appreciations.ordered
   end
 
   def new
@@ -50,7 +53,7 @@ class ReceiversController < ApplicationController
         .permit(:title, :url, :description)
     end
 
-    def set_receiver
-      @receiver = Receiver.find_param(params[:id])
+    def receiver_id
+      params[:id]
     end
 end
