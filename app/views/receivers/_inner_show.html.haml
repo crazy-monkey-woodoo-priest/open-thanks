@@ -2,6 +2,7 @@
   .col-sm-9
     %p= @receiver.description
 
-    %p
-      = link_to inline_svg('thanks-1.svg'), receiver_path(@receiver)
+    - (1..4).each do |index|
+      = render 'variant', i: index, receiver: @receiver
+
   .col-sm-3
