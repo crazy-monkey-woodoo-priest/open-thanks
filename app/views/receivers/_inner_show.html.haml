@@ -23,10 +23,13 @@
         = image_tag 'potatko-3.jpg'
       - when @receiver.policy.can_be_appriciated?(by: current_user)
         = render 'appreciations/form'
+        = image_tag 'potatko-4.jpg'
       - when @receiver.appriciated?(by: current_user)
         You said <em>Thanks</em> to this receiver.
         %i.fa.fa-thumbs-up
+        = image_tag 'potatko-5.jpg'
     - else
       = link_to user_github_omniauth_authorize_path, class: 'btn btn-primary btn-lg btn-block' do
         Say Thanks
         %i.fa.fa-thumbs-up
+      = image_tag 'potatko-4.jpg'
