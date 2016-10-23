@@ -1,4 +1,8 @@
-= simple_form_for(@receiver, html: { class: 'form-horizontal' }) do |f|
-  = f.input :title
-  = f.input :description
-  = f.button :submit, 'Submit'
+.row
+  .col-sm-7
+    = simple_form_for(@receiver, html: { class: 'form-horizontal' }) do |f|
+      = f.input :title
+      = f.input :description
+      = f.button :submit, 'Submit'
+  .col-sm-5
+    = image_tag 'potatko-2.jpg'
