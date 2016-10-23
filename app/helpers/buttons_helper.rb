@@ -16,7 +16,7 @@ module ButtonsHelper
   end
 
   def show_btn(resource:, text: '')
-    if resource.policy.edit?(by: current_user)
+    if resource.policy.show?(by: current_user)
       link_to polymorphic_path(resource), class: "btn btn-success", title: 'View' do
         content_tag(:i, nil, class: 'fa fa-eye').concat(" #{text}")
       end
