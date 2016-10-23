@@ -20,6 +20,7 @@
       - case
       - when @receiver.policy.show_enable?(by: current_user)
         = render 'badges'
+        = image_tag 'potatko-3.jpg'
       - when @receiver.policy.can_be_appriciated?(by: current_user)
         = render 'appreciations/form'
       - when @receiver.appriciated?(by: current_user)
