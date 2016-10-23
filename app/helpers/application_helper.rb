@@ -11,4 +11,16 @@ module ApplicationHelper
       image_tag user.image_url, alt: user.nickname, size: dimensions, class: img_class
     end
   end
+
+  def how_to_enable_a_badge(style: '', btn_class: '' )
+    content_tag :a,
+      class: btn_class,
+      "data-target" => "#enableBadgeModal",
+      "data-toggle" => "modal",
+      :type => "button",
+      role: "button",
+      style: style do
+        yield
+      end
+  end
 end

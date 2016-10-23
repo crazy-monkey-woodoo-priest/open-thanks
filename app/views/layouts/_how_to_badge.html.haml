@@ -1,0 +1,30 @@
+#enableBadgeModal.modal.fade{"aria-labelledby" => "enableBadgeModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog{:role => "document"}
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+        %h4#enableBadgeModalLabel.modal-title Enabling a Badge on a Github or Website
+      .modal-body
+        %p It's easy !
+
+        %p After #{ link_to "Sign Up", user_github_omniauth_authorize_path } with your Github click <em>Receivers</em> from the top menu and then <em>Add New</em>
+        = image_tag 'step-1.jpg'
+
+        %p Fill in some title of your project and maybe description and submit.
+
+        %p On show page copy the Markdown for your Project/Article <br><em>Thank you Receiver</em> Badge
+
+        = image_tag 'generate-button.jpg', size: '400x300'
+
+        %p Paste the copied Markdown to your <em>README.md</em>
+
+        = image_tag 'step-2.jpg'
+
+        %p And that's it! Just sit back and enjoy all the Appreciations <i class="fa fa-heart"></i>
+
+        = image_tag 'step-3.png'
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+        %button.btn.btn-primary{:type => "button"} Save changes
+

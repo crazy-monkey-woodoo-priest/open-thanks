@@ -2,16 +2,18 @@
   .container
     .row
       .col-sm-4
-        %h4 Source Links
+        %h4 How To
         %ul.list-unstyled
-          %li= link_to 'Application Github', t('footer.rr_github_link')
+          %li
+            =how_to_enable_a_badge do
+              Enabling a Badge
 
         %h4 Ruby Rampage
         %ul.list-unstyled
-          %li= link_to 'Rails Rumble Entry', t('footer.team_link')
           %li= link_to 'Official RR host', t('footer.heroku_link')
-          %li= link_to 'HTTPs Heroku endpoint', Rails.configuration.x.stable_host
           %li= link_to 'Official Entry Github', t('footer.rr_github_link')
+          %li= link_to 'HTTPs Heroku endpoint', Rails.configuration.x.stable_host
+          %li= link_to 'Rails Rumble Entry', t('footer.team_link')
 
       .col-sm-4
         %i.fa.fa-diamond.ruby

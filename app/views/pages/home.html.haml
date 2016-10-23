@@ -1,13 +1,18 @@
 %section.container-fluid.jumbotron
   .container
-    = image_tag('potatko-1.jpg', alt: "Open Thanks Mascot", class: 'img-circle pull-right')
+    = image_tag('potatko-1.jpg', alt: "Open Thanks Mascot", class: 'img-circle pull-right', size: '350x350')
     %h1 Open <strong>Thanks</strong>!
-    %p Say thank you to your favorite Open Source project, article, or anything.
+    %p Say thank you to your favorite Open Source project, article !
     %p
       = link_to user_github_omniauth_authorize_path, class: "btn btn-primary btn-lg", role: "button" do
         %i.fa.fa-github
         Sign in
         %small to get started
+      = how_to_enable_a_badge(btn_class: "btn btn-danger btn-lg") do
+        %i.fa.fa-heart
+        Add a badge
+        %small to your Github
+
 
 .container= flash_messages
 
@@ -32,14 +37,24 @@
 
 %section.container-fluid.grey-hat
   .container
-    %h1 Add a "Say thanks" button to your Project!
-    %p Say thank you to your favorite Open Source project, article, or anything.
-    %p
-      = link_to user_github_omniauth_authorize_path, class: "btn btn-primary btn-lg", role: "button" do
-        %i.fa.fa-github
-        Sign in
-        %small to get started
+    .row
+      .col-md-6
+        %h1 Easy way to enable a Badge
+        %p
+          In few simple steps you can enable beautiful <em>Say Thanks</em> button on your Github project,
+          Article, Website, Blog, ..
+        %p
+          The link for your <em>Thank you</em> receiver can be shared to anywehere! So you can receive
+          Thank you from any Social media.
 
+        = how_to_enable_a_badge(style: 'margin-top: 70px;', btn_class: "btn btn-success btn-lg") do
+          %i.fa.fa-angle-double-down
+          Show me how to enable Badge
+          %i.fa.fa-angle-double-down
+
+
+      .col-md-6
+        = image_tag('generate-button.jpg', class: 'img-rounded', alt: "Enable a Badge preview image")
 
 
 %section.container
@@ -52,3 +67,6 @@
         .col-sm-6
           - if appreciation
             = render 'appreciations/appreciation', appreciation: appreciation, user: appreciation.user, show_project: true
+
+
+
