@@ -1,25 +1,30 @@
 class ReceiversController < ApplicationController
   include ReceiversConcern
   before_action :set_receiver, only: [:edit, :update, :show, :destroy]
+  before_action :authenticate_user!, except: [:show]
 
   def index
-    @receivers = Receiver.ordered
+    @receivers = current_user.receivers.ordered
   end
 
   def show
+    not_authorised unless policy.show?
     @appreciation = @receiver.appreciations.new
     @appreciations = @receiver.appreciations.ordered
   end
 
   def new
     @receiver = Receiver.new
+    not_authorised unless policy.new?
   end
 
   def edit
+    not_authorised unless policy.edit?
   end
 
   def create
-    @receiver = Receiver.new(permitter)
+    not_authorised unless policy.create?
+    @receiver =  current_user.receivers.new(permitter)
     if @receiver.save
       redirect_to receiver_path(@receiver)
     else
@@ -28,6 +33,7 @@ class ReceiversController < ApplicationController
   end
 
   def update
+    not_authorised unless policy.update?
     if @receiver.update(permitter)
       redirect_to receiver_path(@receiver)
     else
@@ -36,6 +42,7 @@ class ReceiversController < ApplicationController
   end
 
   def destroy
+    not_authorised unless policy.destroy?
     @receiver.destroy
     flash[:notice] = 'Receiver was deleted'
     redirect_to receivers_path
@@ -55,5 +62,9 @@ class ReceiversController < ApplicationController
 
     def receiver_id
       params[:id]
+    end
+
+    def user_id
+      params[:user_id]
     end
 end

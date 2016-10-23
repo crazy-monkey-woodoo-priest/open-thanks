@@ -2,6 +2,8 @@ class User < ApplicationRecord
   include ParamConcern
   generate_public_uid
   devise :omniauthable, :omniauth_providers => [:github]
+  has_many :receivers, dependent: :destroy
+  has_many :appreciations, dependent: :destroy
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create.tap do |user|

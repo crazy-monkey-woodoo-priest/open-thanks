@@ -23,9 +23,10 @@
           %ul.nav.navbar-nav.navbar-right
             - if current_user
               %li= link_to 'Receivers', receivers_path
-              %li= link_to('Sign out', sign_out_path, :method => :delete)
+              %li= link_to('Sign out', sign_out_path)
+              = avatar(current_user, size: :xs, url: user_path(current_user))
             - else
-              = link_to(user_github_omniauth_authorize_path, class: "btn") do
+              = link_to(user_github_omniauth_authorize_path, class: "btn", role: "button") do
                 Sign in
                 %i.fa.fa-github
 

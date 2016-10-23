@@ -21,7 +21,7 @@ module OpenThanks
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
-    #config.autoload_paths << Rails.root.join('app', 'decorators')
+    config.autoload_paths << Rails.root.join('app', 'policies')
     config.x.stable_host = 'https://thawing-falls-79026.herokuapp.com'
   end
 end

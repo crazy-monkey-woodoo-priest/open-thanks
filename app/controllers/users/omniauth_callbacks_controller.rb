@@ -12,7 +12,15 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
   end
 
+  def after_sign_in_path_for(*arg)
+    receivers_path
+  end
+
   def failure
     redirect_to root_path
+  end
+
+  def success
+    redirect_to receivers_path
   end
 end

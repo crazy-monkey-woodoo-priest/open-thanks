@@ -7,8 +7,14 @@
       = render 'appreciations/appreciation', appreciation: appreciation
 
   .col-sm-3
-    - if true
+    - if policy.show_enable?
       = render 'badges'
-    - else
+    - elsif policy.can_appriciate?
       = render 'appreciations/form'
+    - else
+      = link_to user_github_omniauth_authorize_path, class: 'btn btn-primary btn-lg btn-block' do
+        Say Thanks
+        %i.fa.fa-thumbs-o-up
+
+
 
