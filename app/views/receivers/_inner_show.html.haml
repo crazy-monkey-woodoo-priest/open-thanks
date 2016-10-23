@@ -1,7 +1,7 @@
 .row
   .col-sm-9
     - if @receiver.description
-      .well= @receiver.description
+      .well= simple_format(@receiver.description).html_safe
 
     - @appreciations.in_groups_of(2) do |group|
       - group.each do |appreciation|
