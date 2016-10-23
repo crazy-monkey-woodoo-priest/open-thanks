@@ -21,16 +21,13 @@
           = link_to 'Open Thanks', root_path, class: 'navbar-brand'
         #myNavbar.collapse.navbar-collapse
           %ul.nav.navbar-nav.navbar-right
-            %li= link_to 'Receivers', receivers_path
-            %li
-              %a{:href => "#"} WHAT
-
-
-            %li
-              - if current_user
-                = link_to('SIGN OUT', sign_out_path, :method => :delete)
-              - else
-                = link_to "SIGN IN", user_github_omniauth_authorize_path
+            - if current_user
+              %li= link_to 'Receivers', receivers_path
+              %li= link_to('Sign out', sign_out_path, :method => :delete)
+            - else
+              = link_to(user_github_omniauth_authorize_path, class: "btn") do
+                Sign in
+                %i.fa.fa-github
 
 
     = yield
