@@ -24,8 +24,14 @@
             %li= link_to 'Receivers', receivers_path
             %li
               %a{:href => "#"} WHAT
+
+
             %li
-              %a{:href => "#"} WHERE
+              - if current_user
+                = link_to('SIGN OUT', sign_out_path, :method => :delete)
+              - else
+                = link_to "SIGN IN", user_github_omniauth_authorize_path
+
 
     = yield
 

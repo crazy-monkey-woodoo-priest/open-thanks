@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161023020700) do
+ActiveRecord::Schema.define(version: 20161023134242) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,11 @@ ActiveRecord::Schema.define(version: 20161023020700) do
     t.string   "public_uid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "image_url"
+    t.string   "url"
+    t.string   "nickname"
     t.index ["public_uid"], name: "index_users_on_public_uid", using: :btree
   end
 
