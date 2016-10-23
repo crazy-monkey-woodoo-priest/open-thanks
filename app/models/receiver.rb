@@ -16,4 +16,8 @@ class Receiver < ApplicationRecord
       .pluck(:user_id)
       .include?(by.id)
   end
+
+  def appreciations_count
+    appreciations.count
+  end
 end

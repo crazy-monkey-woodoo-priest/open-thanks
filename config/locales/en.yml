@@ -20,6 +20,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  receivers:
+    index:
+      header_text: Thank you Receivers <small>Your Projects, Articles and other stuff you would like to receive <em>thanks</em> for</small>
+    latest:
+      header_text: Latest Thank you Receivers <small>Projects, Articles and other stuff that would like your <em>thanks</em>!</small>
   footer:
     team_name: 'Crazy Monkey Woodoo Priest'
     team_link: 'https://www.rubyrampage.com/teams/99-crazy-monkey-woodoo-priest'

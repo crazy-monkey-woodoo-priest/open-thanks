@@ -2,9 +2,7 @@
   .page-header
     %nav.btn-group.pull-right
       = new_btn path: new_receiver_path
-    %h1
-      Thank you Receivers
-      %small Your Projects, Articles and other stuff you would like to receive <em>thanks</em> for
+    %h1= @header_text.html_safe
 
   = flash_messages
 
@@ -16,4 +14,8 @@
             .col-md-4
               - if receiver
                 = render 'receivers/receiver', receiver: receiver
+
+  .row
+    .col-sm-12.text-center
+      = paginate @receivers, :theme => 'twitter-bootstrap-3'
 

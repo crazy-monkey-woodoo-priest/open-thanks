@@ -1,12 +1,17 @@
-.media9
+.media
   .media-left
     = avatar(user, size: :medium, url: user.url, img_class: 'media-object')
   .media-body
     %h3.media-heading
       = user.nickname
     %p
-      Said thanks
-      %i.fa.fa-thumbs-up
+      -if show_project
+        Said thanks to #{link_to(truncate(appreciation.receiver.title), receiver_path(appreciation.receiver))}
+        %i.fa.fa-thumbs-up
+      - else
+        Said thanks
+        %i.fa.fa-thumbs-up
+
       - if appreciation.policy.can_be_destroyed?(by: current_user)
         = link_to appreciation_path(appreciation), method: :delete, data: { confirm: "Are you sure?" } do
           %i.fa.fa-trash.text-danger

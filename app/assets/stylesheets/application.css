@@ -58,6 +58,9 @@ body .page-header small {
 .media-body small {
   color: silver;
 }
+.media {
+  margin-bottom: 1em;
+}
 
 
 

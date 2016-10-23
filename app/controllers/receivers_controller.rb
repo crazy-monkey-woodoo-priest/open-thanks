@@ -4,18 +4,20 @@ class ReceiversController < ApplicationController
   before_action :authenticate_user!, except: [:show, :latest]
 
   def index
-    @receivers = current_user.receivers.ordered
+    @header_text = I18n.t('receivers.index.header_text')
+    @receivers = current_user.receivers.ordered.page(params[:page])
   end
 
   def latest
-    @receivers = Receiver.ordered
+    @header_text = I18n.t('receivers.latest.header_text')
+    @receivers = Receiver.ordered.page(params[:page])
     render :index
   end
 
   def show
     not_authorised unless policy.show?
     @appreciation = @receiver.appreciations.new
-    @appreciations = @receiver.appreciations.ordered
+    @appreciations = @receiver.appreciations.ordered.page(params[:page])
   end
 
   def new

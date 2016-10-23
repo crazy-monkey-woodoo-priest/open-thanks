@@ -7,9 +7,15 @@
       - group.each do |appreciation|
         .col-md-6
           -if appreciation
-            = render 'appreciations/appreciation', appreciation: appreciation, user: appreciation.user
+            = render 'appreciations/appreciation', appreciation: appreciation, user: appreciation.user, show_project: false
+
+    .row
+      .col-sm-12.text-center
+        = paginate @appreciations, :theme => 'twitter-bootstrap-3'
 
   .col-sm-3
+    %p So far <strong>#{@receiver.appreciations_count}</strong> users said Thanks!
+
     - if current_user
       - case
       - when policy.show_enable?
