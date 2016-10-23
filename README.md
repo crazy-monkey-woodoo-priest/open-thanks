@@ -1,5 +1,7 @@
 # Open Thanks
 
+[![Open Thanks](http://open-thanks.2016.rubyrampage.com/images/thanks-1.svg)](http://open-thanks.2016.rubyrampage.com/r/ytdkrigb)
+
 
 
 ## Code Approach
