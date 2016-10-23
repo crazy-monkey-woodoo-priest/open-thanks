@@ -25,6 +25,8 @@ class ReceiverPolicy
   end
 
   def can_appriciate?
-    current_user && current_user != resource.user
+    current_user \
+      && current_user != resource.user \
+      && current_user.appriciated?(resource)
   end
 end

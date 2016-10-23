@@ -1,1 +1,17 @@
-aaaaaaaaa
+.media9
+  .media-left
+    = avatar(user, size: :medium, url: user.url, img_class: 'media-object')
+  .media-body
+    %h3.media-heading
+      = user.nickname
+    %p
+      Said thanks
+      %i.fa.fa-thumbs-up
+    %small= l(appreciation.created_at, format: :short)
+    %div
+      = link_to user_path(user) do
+        Open Thanks
+        %i.fa.fa-heart
+      = link_to user.url do
+        GitHub
+        %i.fa.fa-github

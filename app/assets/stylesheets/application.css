@@ -55,6 +55,10 @@ body .page-header small {
   display: block;
 }
 
+.media-body small {
+  color: silver;
+}
+
 
 
 

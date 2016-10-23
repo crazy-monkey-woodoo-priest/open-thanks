@@ -3,7 +3,7 @@ class AppreciationsController < ApplicationController
   before_action :set_receiver, only: [:create]
 
   def create
-    @appreciation = Appreciation.new(receiver: @receiver)
+    @appreciation = current_user.appreciations.new(receiver: @receiver)
     @appreciation.save!
 
     respond_to do |format|

@@ -14,5 +14,9 @@ class User < ApplicationRecord
     end
   end
 
+  def appriciated?(receiver)
+    appreciations.include?(receiver)
+  end
+
   has_many :appreciations
 end

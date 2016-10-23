@@ -3,18 +3,22 @@
     - if @receiver.description
       .well= @receiver.description
 
-    - @appreciations.each do |appreciation|
-      = render 'appreciations/appreciation', appreciation: appreciation
+    - @appreciations.in_groups_of(2) do |group|
+      - group.each do |appreciation|
+        .col-md-6
+          -if appreciation
+            = render 'appreciations/appreciation', appreciation: appreciation, user: appreciation.user
 
   .col-sm-3
-    - if policy.show_enable?
-      = render 'badges'
-    - elsif policy.can_appriciate?
-      = render 'appreciations/form'
+    - if current_user
+      - if policy.show_enable?
+        = render 'badges'
+      - elsif policy.can_appriciate?
+        = render 'appreciations/form'
+      - else
+        You said <em>Thanks</em> to this receiver.
+        %i.fa.fa-thumbs-up
     - else
       = link_to user_github_omniauth_authorize_path, class: 'btn btn-primary btn-lg btn-block' do
         Say Thanks
-        %i.fa.fa-thumbs-o-up
-
-
-
+        %i.fa.fa-thumbs-up
