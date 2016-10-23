@@ -20,4 +20,8 @@ class Receiver < ApplicationRecord
   def appreciations_count
     appreciations.count
   end
+
+  def policy
+    @policy ||= ReceiverPolicy.new.tap { |rp| rp.resource = self }
+  end
 end

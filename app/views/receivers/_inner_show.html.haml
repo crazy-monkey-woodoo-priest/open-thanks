@@ -18,9 +18,9 @@
 
     - if current_user
       - case
-      - when policy.show_enable?
+      - when @receiver.policy.show_enable?(by: current_user)
         = render 'badges'
-      - when policy.can_appriciate?
+      - when @receiver.policy.can_be_appriciated?(by: current_user)
         = render 'appreciations/form'
       - when @receiver.appriciated?(by: current_user)
         You said <em>Thanks</em> to this receiver.

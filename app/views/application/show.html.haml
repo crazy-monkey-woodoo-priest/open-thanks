@@ -1,9 +1,9 @@
 .container
   .page-header
     %nav.btn-group.pull-right
-      = view_all_btn(path: polymorphic_path([resource.class])) if policy.index?
-      = edit_btn(resource: resource) if policy.edit?
-      = delete_btn(resource: resource)  if policy.destroy?
+      = view_all_btn(path: polymorphic_path([resource.class]), policy_class: policy_class)
+      = edit_btn(resource: resource)
+      = delete_btn(resource: resource)
 
     %h1= resource.title
 

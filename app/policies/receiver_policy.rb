@@ -1,39 +1,38 @@
 class ReceiverPolicy
-  attr_accessor :current_user, :resource
+  attr_accessor :resource
 
-  def show?
+  def show?(by:)
     true
   end
 
-  def can_see_latest?
+  def self.can_see_latest?(by:)
     true
   end
 
-  def index?
-    !!current_user
+  def self.index?(by:)
+    !!by
   end
 
-  def show_enable?
-    current_user == resource.user
+  def show_enable?(by:)
+    by == resource.user
   end
 
-  def new?
-    !!current_user
+  def new?(by:)
+    !!by
   end
   alias_method :create?, :new?
 
-  def edit?
-    current_user == resource.user
+  def edit?(by:)
+    by == resource.user
   end
   alias_method :update?, :edit?
 
-  def destroy?
-    current_user == resource.user
+  def destroy?(by:)
+    by == resource.user
   end
 
-  def can_appriciate?
-    current_user \
-      && current_user != resource.user \
-      && !resource.appriciated?(by: current_user)
+  def can_be_appriciated?(by:)
+    by && by != resource.user \
+      && !resource.appriciated?(by: by)
   end
 end

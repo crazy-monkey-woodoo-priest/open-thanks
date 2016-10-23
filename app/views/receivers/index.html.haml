@@ -1,7 +1,7 @@
 .container
   .page-header
     %nav.btn-group.pull-right
-      = new_btn path: new_receiver_path
+      = new_btn path: new_receiver_path, resource: Receiver.new
     %h1= @header_text.html_safe
 
   = flash_messages
