@@ -7,7 +7,7 @@
   = flash_messages
 
   .row
-    .col-sm-7
+    .col-sm-7{data: {turbolinks: false}}
       - @receivers.in_groups_of(2).each do |group|
         .row
           - group.each do |receiver|
