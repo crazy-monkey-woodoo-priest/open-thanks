@@ -1,6 +1,13 @@
-.h4 Variant #{i}
-%div
-  = link_to image_tag(badge_image(i)), stable_url(receiver)
-%div
-  %textarea{readonly: 'readonly', class:"form-control", rows:"3", port: 80}
-    [![Open Thanks](#{badge_image(i)})](#{stable_url(receiver)})
+.row
+  .col-sm-4
+    = link_to image_tag(badge_image(i)), stable_url(receiver)
+  .col-sm-8
+    .btn-grop
+      = badge_colapse_btn(index: i, suffix: 'md', text: 'Markdown')
+      = badge_colapse_btn(index: i, suffix: 'html', text: 'HTML')
+.row
+  .col-sm-4
+  .col-sm-8
+    = badge_textarea_md(index: i, suffix: 'md', receiver: receiver)
+    = badge_textarea_html(index: i, suffix: 'html', receiver: receiver)
+

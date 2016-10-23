@@ -10,5 +10,4 @@ module StableHostHelper
   def stable_url(receiver)
     receiver_url(receiver, host: StableHostHelper.uri.host , protocol: StableHostHelper.uri.scheme, port: StableHostHelper.uri.port)
   end
-
 end
