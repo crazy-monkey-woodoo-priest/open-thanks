@@ -7,13 +7,15 @@
   = flash_messages
 
   .row
-    .col-sm-12
-      - @receivers.in_groups_of(3).each do |group|
+    .col-sm-7
+      - @receivers.in_groups_of(2).each do |group|
         .row
           - group.each do |receiver|
-            .col-md-4
+            .col-md-6
               - if receiver
                 = render 'receivers/receiver', receiver: receiver
+    .col-sm-5
+      = image_tag 'potatko-2.jpg'
 
   .row
     .col-sm-12.text-center
