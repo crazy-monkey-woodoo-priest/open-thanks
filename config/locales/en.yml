@@ -23,5 +23,4 @@ en:
   footer:
     team_name: 'Crazy Monkey Woodoo Priest'
     team_link: 'https://www.rubyrampage.com/teams/99-crazy-monkey-woodoo-priest'
-    heroku_link: <%= Rails.configuration.x.stable_host %>
     rr_github_link: 'https://github.com/rumblex/rubyrampage2016-open-thanks'

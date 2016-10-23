@@ -22,6 +22,6 @@ module OpenThanks
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     #config.autoload_paths << Rails.root.join('app', 'decorators')
-    config.x.stable_host = 'https://open-thanks.2016.rubyrampage.com'
+    config.x.stable_host = 'http://open-thanks.2016.rubyrampage.com'
   end
 end
