@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161022155236) do
+ActiveRecord::Schema.define(version: 20161023020700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "appreciations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "receiver_id"
+    t.string   "public_uid"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["public_uid"], name: "index_appreciations_on_public_uid", using: :btree
+  end
 
   create_table "receivers", force: :cascade do |t|
     t.string   "title"
@@ -22,6 +31,7 @@ ActiveRecord::Schema.define(version: 20161022155236) do
     t.string   "public_uid"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["public_uid"], name: "index_receivers_on_public_uid", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
