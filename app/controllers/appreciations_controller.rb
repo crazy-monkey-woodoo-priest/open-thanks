@@ -3,7 +3,7 @@ class AppreciationsController < ApplicationController
   before_action :set_receiver, only: [:create]
 
   def create
-    not_authorised unless @receiver.can_be_appriciated?(by: current_user)
+    not_authorised unless @receiver.policy.can_be_appriciated?(by: current_user)
 
     @appreciation = current_user.appreciations.new(receiver: @receiver)
     @appreciation.save!
