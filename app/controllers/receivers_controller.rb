@@ -1,10 +1,15 @@
 class ReceiversController < ApplicationController
   include ReceiversConcern
   before_action :set_receiver, only: [:edit, :update, :show, :destroy]
-  before_action :authenticate_user!, except: [:show]
+  before_action :authenticate_user!, except: [:show, :latest]
 
   def index
     @receivers = current_user.receivers.ordered
+  end
+
+  def latest
+    @receivers = Receiver.ordered
+    render :index
   end
 
   def show

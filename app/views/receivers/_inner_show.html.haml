@@ -11,11 +11,12 @@
 
   .col-sm-3
     - if current_user
-      - if policy.show_enable?
+      - case
+      - when policy.show_enable?
         = render 'badges'
-      - elsif policy.can_appriciate?
+      - when policy.can_appriciate?
         = render 'appreciations/form'
-      - else
+      - when @receiver.appriciated?(by: current_user)
         You said <em>Thanks</em> to this receiver.
         %i.fa.fa-thumbs-up
     - else

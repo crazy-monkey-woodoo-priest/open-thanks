@@ -7,7 +7,10 @@ Rails.application.routes.draw do
 
   resources :users, only: :show
   resources :r, controller: 'receivers', as: :receivers do
-    resources :appreciations, only: [:create, :destroy]
+    collection do
+      get :latest
+    end
+    resources :appreciations, only: [:create, :destroy], shallow: true
   end
 
   #get '/auth/:provider/callback', to: 'sessions#create'

@@ -7,6 +7,9 @@
     %p
       Said thanks
       %i.fa.fa-thumbs-up
+      - if appreciation.policy.can_be_destroyed?(by: current_user)
+        = link_to appreciation_path(appreciation), method: :delete, data: { confirm: "Are you sure?" } do
+          %i.fa.fa-trash.text-danger
     %small= l(appreciation.created_at, format: :short)
     %div
       = link_to user_path(user) do

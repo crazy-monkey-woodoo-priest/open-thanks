@@ -4,7 +4,14 @@ class ReceiverPolicy
   def show?
     true
   end
-  alias_method :index?, :show?
+
+  def can_see_latest?
+    true
+  end
+
+  def index?
+    !!current_user
+  end
 
   def show_enable?
     current_user == resource.user
@@ -27,6 +34,6 @@ class ReceiverPolicy
   def can_appriciate?
     current_user \
       && current_user != resource.user \
-      && current_user.appriciated?(resource)
+      && !resource.appriciated?(by: current_user)
   end
 end

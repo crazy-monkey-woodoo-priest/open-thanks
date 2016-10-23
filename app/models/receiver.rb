@@ -9,4 +9,11 @@ class Receiver < ApplicationRecord
 
   validates_presence_of :url
   validates_presence_of :title
+  validates_presence_of :user
+
+  def appriciated?(by:)
+    by && appreciations
+      .pluck(:user_id)
+      .include?(by.id)
+  end
 end

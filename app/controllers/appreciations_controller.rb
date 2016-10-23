@@ -12,9 +12,12 @@ class AppreciationsController < ApplicationController
   end
 
   def destroy
-    @receiver.destroy
-    flash[:notice] = 'Receiver was deleted'
-    redirect_to receivers_path
+    @appreciation = Appreciation.find_param(params[:id])
+    not_authorised unless @appreciation.policy.can_be_destroyed?(by: current_user)
+
+    @appreciation.destroy
+    flash[:notice] = 'Your Appreciation was deleted'
+    redirect_to receiver_path(@appreciation.receiver)
   end
 
   private
