@@ -22,14 +22,20 @@ with alteration around writing private methods to comply with
 
 ## Development
 
+##### 1 - Enviroment Varibales
+
 Application is relying on ENV variables (DB, Redis, ...). 
 
 You can install [direnv](http://direnv.net/) and example env variables
 are in file `.envrc.example`, copy it to `.envrc`. Don't forget to do
 `direnv allow` after you done
 
+##### 2 - Github endpoint:
 
+First you need to configure host to match the one specified in github
 
 Add `127.0.0.1 development.open-thanks` to `/etc/hosts`
 and use `http://development.open-thanks` in browser.
 
+Second you will have to go to Github and generate application Oauth id/key 
+and set those as ENV variables 
