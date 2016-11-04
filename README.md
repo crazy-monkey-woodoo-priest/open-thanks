@@ -5,6 +5,14 @@
 
 ![Logo](https://raw.githubusercontent.com/crazy-monkey-woodoo-priest/open-thanks/master/app/assets/images/potatko-1.jpg)
 
+Open thanks is a platform that provides convenient way how to receive and say "Thank you" on a project, article, blog, comment, ... It's entirely OpenSource and we welcome any contributions to the project.
+
+Open Thanks is a 2016 [Ruby Rampage](https://www.rubyrampage.com) hackathon entry. We didn't win, not even a potato. But the project lives on :)
+
+* http://www.open-thanks.com/
+* https://thawing-falls-79026.herokuapp.com
+* https://www.rubyrampage.com/entries/99-crazy-monkey-woodoo-priest
+
 ## Code Approach
 
 Trying to follow [Ruby Style Guide](https://github.com/bbatsov/ruby-style-guide)
