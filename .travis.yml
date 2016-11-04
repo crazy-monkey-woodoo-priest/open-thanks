@@ -5,6 +5,6 @@ rvm:
 before_install: gem install bundler
 before_script:
   - psql -c 'create database open_thanks_test;' -U postgres
-env
+env:
   - REL_DATABASE_HOST=postgresql
   - REL_DATABASE_USERNAME=postgres
