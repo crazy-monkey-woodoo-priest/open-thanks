@@ -3,3 +3,8 @@ language: ruby
 rvm:
   - 2.3.1
 before_install: gem install bundler
+before_script:
+  - psql -c 'create database open_thanks_test;' -U postgres
+env
+  - REL_DATABASE_HOST=postgresql
+  - REL_DATABASE_USERNAME=postgres
