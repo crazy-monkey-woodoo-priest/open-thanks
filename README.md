@@ -29,6 +29,7 @@ are in file `.envrc.example`, copy it to `.envrc`. Don't forget to do
 `direnv allow` after you done
 
 
+
 Add `127.0.0.1 development.open-thanks` to `/etc/hosts`
 and use `http://development.open-thanks` in browser.
 
