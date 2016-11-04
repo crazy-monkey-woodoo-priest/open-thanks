@@ -1,5 +1,6 @@
 # Open Thanks
 
+[![Build Status](https://travis-ci.org/crazy-monkey-woodoo-priest/open-thanks.svg?branch=master)](https://travis-ci.org/crazy-monkey-woodoo-priest/open-thanks)
 [![Gitten](http://gittens.r15.railsrumble.com//badge/open-thanks/open-thanks)](http://gittens.r15.railsrumble.com/gitten/open-thanks/open-thanks)
 [![Open Thanks](http://open-thanks.2016.rubyrampage.com/images/thanks-1.svg)](http://open-thanks.2016.rubyrampage.com/r/ytdkrigb)
 
