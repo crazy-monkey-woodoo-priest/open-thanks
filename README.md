@@ -10,9 +10,15 @@ Open thanks is a platform that provides convenient way how to receive and say "T
 
 Open Thanks is a 2016 [Ruby Rampage](https://www.rubyrampage.com) hackathon entry. We didn't win, not even a potato. But the project lives on :)
 
+* https://www.youtube.com/watch?v=2hBFL-PCEPI&t=1s
+
+Legacy links (not working anymore):
+
+```
 * http://www.open-thanks.com/
 * https://thawing-falls-79026.herokuapp.com
 * https://www.rubyrampage.com/entries/99-crazy-monkey-woodoo-priest
+```
 
 ## Code Approach
 
